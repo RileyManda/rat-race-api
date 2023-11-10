@@ -49,6 +49,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
     t.text "resume"
     t.text "about"
     t.text "experience"
+    t.string "portfolio_link"
+    t.string "cover_letter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"

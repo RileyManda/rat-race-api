@@ -7,6 +7,8 @@ class CreateProfiles < ActiveRecord::Migration[7.1]
       t.text :resume
       t.text :about
       t.text :experience
+      t.string :portfolio_link
+      t.string :cover_letter
 
       t.timestamps
     end
