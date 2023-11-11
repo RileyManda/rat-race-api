@@ -1,5 +1,7 @@
-class CompaniesController < ApplicationController
-  before_action :set_company, only: %i[show update destroy]
+module Api
+  module V1
+    class CompaniesController < ApplicationController
+    before_action :set_company, only: %i[show update destroy]
 
   # GET /companies
   def index
@@ -49,4 +51,5 @@ class CompaniesController < ApplicationController
   def company_params
     params.require(:company).permit(:name, :website)
   end
+end
 end

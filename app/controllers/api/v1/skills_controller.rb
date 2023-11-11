@@ -1,3 +1,5 @@
+module Api
+  module V1
 class SkillsController < ApplicationController
   before_action :set_skill, only: %i[show update destroy]
 

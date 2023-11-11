@@ -1,3 +1,5 @@
+module Api
+  module V1
 class JobApplicationsController < ApplicationController
   before_action :set_job_application, only: %i[show update destroy]
 

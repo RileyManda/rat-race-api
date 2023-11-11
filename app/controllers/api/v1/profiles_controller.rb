@@ -1,3 +1,5 @@
+module Api
+  module V1
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[show update destroy]
 

@@ -1,3 +1,5 @@
+module Api
+  module V1
 class EducationsController < ApplicationController
   before_action :set_education, only: %i[show update destroy]
 
