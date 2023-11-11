@@ -52,3 +52,8 @@ class EducationsController < ApplicationController
     params.require(:education).permit(:user_id, :institution, :degree, :graduation_year)
   end
 end
+end
+end
+
+
+

@@ -52,3 +52,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name)
   end
 end
+end
+end

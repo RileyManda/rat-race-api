@@ -52,3 +52,6 @@ class SkillsController < ApplicationController
     params.require(:skill).permit(:name)
   end
 end
+end
+end
+

@@ -53,3 +53,6 @@ class ProfilesController < ApplicationController
                                     :cover_letter)
   end
 end
+end
+end
+

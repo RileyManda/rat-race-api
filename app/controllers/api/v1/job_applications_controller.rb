@@ -52,3 +52,6 @@ class JobApplicationsController < ApplicationController
     params.require(:job_application).permit(:user_id, :role_id, :cover_letter, :resume, :status)
   end
 end
+end
+end
+

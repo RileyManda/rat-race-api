@@ -52,3 +52,6 @@ class RolesController < ApplicationController
     params.require(:role).permit(:company_id, :name, :description, :type, :location, :salary)
   end
 end
+end
+end
+
