@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
     t.bigint "company_id", null: false
     t.string "name"
     t.text "description"
-    t.string "type", null: false
+    t.string "employee_type"
     t.string "location"
     t.decimal "salary", precision: 10, scale: 2
     t.datetime "created_at", null: false
@@ -70,8 +70,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
 
   create_table "skills", force: :cascade do |t|
     t.string "name"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_skills_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,4 +87,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
   add_foreign_key "job_applications", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "roles", "companies"
+  add_foreign_key "skills", "users"
 end
