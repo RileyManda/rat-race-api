@@ -1,5 +1,5 @@
 <div align="center">
- <img src="./app/assets/images/app-logo.png" alt="logo" width="140"  height="auto" />
+ <img src="ratrace-cloud.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>RatRace API</b></h1>
 
