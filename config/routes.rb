@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :skills
-  resources :companies
-  resources :roles
-  resources :profiles
-  resources :job_applications
-  resources :educations
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+namespace :api do
+    namespace :v1 do
+      resources :companies do
+        resources :roles
+      end
+
+      resources :roles do
+        resources :job_applications
+      end
+
+      resources :users do
+        resources :educations
+        resources :job_applications
+        resources :profiles
+        resources :skills
+      end
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,4 +1,4 @@
-class SkillsController < ApplicationController
+class Api::V1::SkillsController < ApplicationController
   before_action :set_skill, only: %i[show update destroy]
 
   # GET /skills

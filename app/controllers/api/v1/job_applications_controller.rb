@@ -1,4 +1,4 @@
-class JobApplicationsController < ApplicationController
+class Api::V1::JobApplicationsController < ApplicationController
   before_action :set_job_application, only: %i[show update destroy]
 
   # GET /job_applications
