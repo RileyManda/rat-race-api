@@ -1,59 +1,53 @@
-module Api
-  module V1
-class EducationsController < ApplicationController
-  before_action :set_education, only: %i[show update destroy]
 
-  # GET /educations
-  def index
-    @educations = Education.all
+class Api::V1:: EducationsController < ApplicationController
+      before_action :set_education, only: %i[show update destroy]
 
-    render json: @educations
-  end
+      # GET /educations
+      def index
+        @educations = Education.all
 
-  # GET /educations/1
-  def show
-    render json: @education
-  end
+        render json: @educations
+      end
 
-  # POST /educations
-  def create
-    @education = Education.new(education_params)
+      # GET /educations/1
+      def show
+        render json: @education
+      end
 
-    if @education.save
-      render json: @education, status: :created, location: @education
-    else
-      render json: @education.errors, status: :unprocessable_entity
+      # POST /educations
+      def create
+        @education = Education.new(education_params)
+
+        if @education.save
+          render json: @education, status: :created, location: @education
+        else
+          render json: @education.errors, status: :unprocessable_entity
+        end
+      end
+
+      # PATCH/PUT /educations/1
+      def update
+        if @education.update(education_params)
+          render json: @education
+        else
+          render json: @education.errors, status: :unprocessable_entity
+        end
+      end
+
+      # DELETE /educations/1
+      def destroy
+        @education.destroy!
+      end
+
+      private
+
+      # Use callbacks to share common setup or constraints between actions.
+      def set_education
+        @education = Education.find(params[:id])
+      end
+
+      # Only allow a list of trusted parameters through.
+      def education_params
+        params.require(:education).permit(:user_id, :institution, :degree, :graduation_year)
+      end
     end
-  end
-
-  # PATCH/PUT /educations/1
-  def update
-    if @education.update(education_params)
-      render json: @education
-    else
-      render json: @education.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /educations/1
-  def destroy
-    @education.destroy!
-  end
-
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_education
-    @education = Education.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def education_params
-    params.require(:education).permit(:user_id, :institution, :degree, :graduation_year)
-  end
-end
-end
-end
-
-
-
