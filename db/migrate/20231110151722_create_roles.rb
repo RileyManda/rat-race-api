@@ -6,7 +6,7 @@ class CreateRoles < ActiveRecord::Migration[7.1]
       t.text :description
       t.string :type, null: false
       t.string :location
-      t.decimal :salary, precision: 10, scale: 2  
+      t.decimal :salary, precision: 10, scale: 2
 
       t.datetime :created_at, null: false
       t.datetime :updated_at, null: false
