@@ -1,5 +1,5 @@
 class JobApplicationsController < ApplicationController
-  before_action :set_job_application, only: %i[ show update destroy ]
+  before_action :set_job_application, only: %i[show update destroy]
 
   # GET /job_applications
   def index
@@ -39,13 +39,14 @@ class JobApplicationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job_application
-      @job_application = JobApplication.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def job_application_params
-      params.require(:job_application).permit(:user_id, :role_id, :cover_letter, :resume, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job_application
+    @job_application = JobApplication.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def job_application_params
+    params.require(:job_application).permit(:user_id, :role_id, :cover_letter, :resume, :status)
+  end
 end
