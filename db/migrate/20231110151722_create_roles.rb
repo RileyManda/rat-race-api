@@ -4,7 +4,7 @@ class CreateRoles < ActiveRecord::Migration[7.1]
       t.bigint :company_id, null: false
       t.string :name
       t.text :description
-      t.string :type, null: false
+      t.string :employee_type
       t.string :location
       t.decimal :salary, precision: 10, scale: 2
 
