@@ -132,7 +132,8 @@ Ratrace is an api for the rat-race application that exposes the endpoints requir
 
 ## 🚀 Schema  <a name="schema"></a>
 
-> The following diagram depicts the database schema for this project.:
+> The following diagram depicts the [database schema](href="https://dbdiagram.io/d/rat-race-64eca01102bd1c4a5e891496) for this project.:
+
 <img src="rat-race-schema.png" alt="ratrace schema">
 
 
