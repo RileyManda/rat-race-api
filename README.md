@@ -17,7 +17,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
     - [🚀 Live Demo](#live-demo)
-    - [🚀 Presentation](#video-presentation)
+    - [🚀 Schema](#schema)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
    - [API End-Points](#api-end-points)
@@ -126,15 +126,15 @@ Ratrace is an api for the rat-race application that exposes the endpoints requir
 
 > Live Demo of this application:
 
-- [Live Demo Link](https://coincraft.onrender.com/)
+- [Live Demo Link](https://coincraft.onrender.com/) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Video Presentation Demo <a name="video-presentation"></a>
+## 🚀 Schema  <a name="schema"></a>
 
-> Video Presentation of this application:
+> The following diagram depicts the database schema for this project.:
+<img src="rat-race-schema.png" alt="ratrace schema">
 
-- [Video Presentation](https://) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- GETTING STARTED -->
