@@ -1,5 +1,5 @@
 <div align="center">
- <img src="./app/assets/images/app-logo.png" alt="logo" width="140"  height="auto" />
+ <img src="ratrace-cloud.png" alt="logo" width="140"  height="auto" />
   <br/>
   <h1><b>RatRace API</b></h1>
 
@@ -20,6 +20,7 @@
     - [🚀 Presentation](#video-presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
+   - [API End-Points](#api-end-points)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
@@ -186,18 +187,16 @@ To run tests, run the following command:
   Rspec spec  or bundle exec rspec spec
 ```
 
+### API End-Points <a name="api-end-points"></a>
+| Resource | Endpoint |
+|----------|----------|
+| Users    | `/api/v1/users` |
+| Education| `/api/v1/users/1/educations` |
+| Skills   | `/api/v1/users/1/skills` |
+| Profiles | `/api/v1/users/1/profiles` |
+| Companies| `/api/v1/companies` |
+| Roles    | `/api/v1/roles` |
 
-<!-- ### Deployment
-
-You can deploy this project using: -->
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
