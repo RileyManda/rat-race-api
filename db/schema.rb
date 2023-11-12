@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_12_161720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,22 +56,46 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "quests", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roles", force: :cascade do |t|
     t.bigint "company_id", null: false
     t.string "name"
     t.text "description"
-    t.string "type", null: false
+    t.string "employee_type"
     t.string "location"
     t.decimal "salary", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "quest_id"
+    t.integer "ranking", default: 0
     t.index ["company_id", "name"], name: "index_roles_on_company_id_and_name", unique: true
+    t.index ["quest_id"], name: "index_roles_on_quest_id"
   end
 
   create_table "skills", force: :cascade do |t|
     t.string "name"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_skills_on_user_id"
+  end
+
+  create_table "user_quests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "quest_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "progress", default: 0
+    t.integer "ranking", default: 0
+    t.index ["quest_id"], name: "index_user_quests_on_quest_id"
+    t.index ["user_id"], name: "index_user_quests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,4 +109,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_10_152055) do
   add_foreign_key "job_applications", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "roles", "companies"
+  add_foreign_key "roles", "quests"
+  add_foreign_key "skills", "users"
+  add_foreign_key "user_quests", "quests"
+  add_foreign_key "user_quests", "users"
 end
