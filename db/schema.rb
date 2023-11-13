@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_12_181644) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_13_202720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_181644) do
     t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "applied_at"
+    t.date "interviewing_at"
+    t.date "hired_at"
     t.index ["user_id", "role_id"], name: "index_job_applications_on_user_id_and_role_id", unique: true
   end
 
@@ -93,6 +96,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_181644) do
     t.datetime "updated_at", null: false
     t.bigint "quest_id"
     t.integer "ranking", default: 0
+    t.date "contract_expiration"
     t.index ["company_id", "name"], name: "index_roles_on_company_id_and_name", unique: true
     t.index ["quest_id"], name: "index_roles_on_quest_id"
   end
@@ -120,7 +124,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_12_181644) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "role_type"
+    t.string "role"
   end
 
   add_foreign_key "educations", "users"
