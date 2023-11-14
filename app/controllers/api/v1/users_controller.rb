@@ -14,7 +14,6 @@ class Api::V1::UsersController < ApplicationController
 
   # POST /users
   def create
-    params[:user][:image] ||= default_image_url
     @user = User.new(user_params)
 
     if @user.save
@@ -50,7 +49,4 @@ class Api::V1::UsersController < ApplicationController
     params.require(:user).permit(:name, :image)
   end
 
-  def default_image_url
-    ActionController::Base.helpers.asset_url('default_user_image.svg')
-  end
 end
