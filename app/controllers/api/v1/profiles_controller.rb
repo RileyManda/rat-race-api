@@ -49,6 +49,6 @@ class Api::V1::ProfilesController < ApplicationController
   def profile_params
     params.require(:profile).permit(:user_id, :introduction, :resume, :about, :experience, :portfolio_link,
                                     :cover_letter, :github, :linkedin, :stackoverflow, :medium, :wellfound, :pinterest,
-                                    :youtube, :instagram, :twitter, :facebook )
+                                    :youtube, :instagram, :twitter, :facebook)
   end
 end

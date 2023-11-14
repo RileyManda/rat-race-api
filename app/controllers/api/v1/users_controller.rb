@@ -47,7 +47,7 @@ class Api::V1::UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :image )
+    params.require(:user).permit(:name, :image)
   end
 
   def default_image_url
